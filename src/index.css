@@ -3,3 +3,13 @@
 * {
     font-family: "Google Sans", Roboto, Arial, sans-serif;
 }
+.ripple-button {
+    border-radius: 50%;
+    overflow:hidden;
+    transition: background-color 0.1s ease;
+    cursor: pointer;
+    user-select: none;
+}
+.ripple-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
