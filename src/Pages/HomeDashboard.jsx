@@ -1,4 +1,5 @@
-import ClassCard from './ClassCard'
+import { Outlet } from 'react-router-dom'
+import ClassCard from '../components/ClassCard.jsx'
 
 const HomeDashboard = () => {
   return (
@@ -15,7 +16,6 @@ const HomeDashboard = () => {
       <ClassCard/>
       <ClassCard/>
       <ClassCard/>
-    
     </ul>
   )
 }

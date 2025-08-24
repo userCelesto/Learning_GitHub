@@ -1,12 +1,10 @@
 import { useState } from 'react';
 
 const ClassCard = () => {
-
+    const randomBanner = Math.floor(Math.random() * 5) + 1;
   return (
     <li className='h-[18.5rem] w-[18.75rem] flex flex-col border-solid border-gray-300 border rounded-xl overflow-hidden hover:shadow-md hover-cursor-pointer'>
-        <div className="subjectTitles pt-[1rem] px-[1rem] pb-[0.5rem] w-[300px] h-[100px] bg-green-400">
-            <div className="bgImage">
-            </div>
+        <div className={`subjectTitles pt-[1rem] px-[1rem] pb-[0.5rem] w-[300px] h-[100px] bg-linear-to-r/srgb from-indigo-500 to-teal-400 bg-contain bg-center`}>
             <h2 className='inline-flex'>
                 <a href="" className='group flex flex-col'>
                     <div className="subjectName inline-flex group-hover:underline text-2xl leading-[2rem] truncate mb-[0.25rem]">
