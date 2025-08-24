@@ -3,7 +3,7 @@ import { useState } from 'react';
 const ClassCard = () => {
 
   return (
-    <li className='h-[18.5rem] w-[18.75rem] flex flex-col border-solid border-gray-300 border rounded-xl overflow-hidden'>
+    <li className='h-[18.5rem] w-[18.75rem] flex flex-col border-solid border-gray-300 border rounded-xl overflow-hidden hover:shadow-md hover-cursor-pointer'>
         <div className="subjectTitles pt-[1rem] px-[1rem] pb-[0.5rem] w-[300px] h-[100px] bg-green-400">
             <div className="bgImage">
             </div>
@@ -29,13 +29,13 @@ const ClassCard = () => {
         </div> 
         <div className="options flex justify-end gap-[1rem] px-[0.25rem] py-[0.5rem] border-t-[1px] border-solid border-gray-300">
             <div className='h-[40px] w-[40px] flex justify-center items-center ripple-button'>
-                <a className='text-black flex items-center'><span class="material-symbols-outlined">work</span></a>
+                <a className='text-black flex items-center'><span className="material-symbols-outlined">work</span></a>
             </div>
             <div className='h-[40px] w-[40px] flex justify-center items-center ripple-button'>
-                <a className='text-black flex items-center'><span class="material-symbols-outlined">folder</span></a>
+                <a className='text-black flex items-center'><span className="material-symbols-outlined">folder</span></a>
             </div>
             <div className='h-[40px] w-[40px] flex justify-center items-center ripple-button'>
-                <a className='text-black flex items-center'><span class="material-symbols-outlined">more_vert</span></a>
+                <a className='text-black flex items-center'><span className="material-symbols-outlined">more_vert</span></a>
             </div>
         </div>
     </li>
