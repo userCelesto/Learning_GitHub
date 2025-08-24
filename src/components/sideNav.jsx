@@ -4,7 +4,7 @@ const SideNav = () => {
   const [ActiveButton, setActiveButton] = useState(null)
   const handle_click = (e) => {
     const button = e.target.closest('a')?.name || null
-    setActiveButton(button)
+    button? setActiveButton(button): ''
   }
 
   return (
