@@ -3,7 +3,7 @@ import ClassCard from '../components/ClassCard.jsx'
 
 const HomeDashboard = () => {
   return (
-    <ul className='p-[1.5rem] w-[calc(100vw-4.75rem)] flex flex-wrap gap-[1rem] text-white'>
+    <ul className='flex flex-wrap p-[1.5rem] gap-[1rem] text-white'>
       <ClassCard/>
       <ClassCard/>
       <ClassCard/>

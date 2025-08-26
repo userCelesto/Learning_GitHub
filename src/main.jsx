@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import HomeDashboard from './Pages/HomeDashboard.jsx'
+import Settings from './components/Settings.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
       {path:'h', element:<  HomeDashboard />},
       {path:'h/archived', element: <div>This is a page for archived classes</div>},
       {path:'calendar', element: <div>This is a Calendar</div>},
-      {path:'s', element: <div>Settings Page</div>},
+      {path:'s', element: <Settings />},
     ]
   }
 ])

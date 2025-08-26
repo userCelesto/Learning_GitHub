@@ -4,14 +4,16 @@ const ClassCard = () => {
     const randomBanner = Math.floor(Math.random() * 5) + 1;
   return (
     <li className='h-[18.5rem] w-[18.75rem] flex flex-col border-solid border-gray-300 border rounded-xl overflow-hidden hover:shadow-md hover-cursor-pointer'>
-        <div className={`subjectTitles pt-[1rem] px-[1rem] pb-[0.5rem] w-[300px] h-[100px] bg-linear-to-r/srgb from-indigo-500 to-teal-400 bg-contain bg-center`}>
-            <h2 className='inline-flex'>
+        <div className={`relative subjectTitles pt-[1rem] px-[1rem] pb-[0.5rem] w-[300px] h-[100px] after:content-[''] flex flex-col justify-around `}>
+            <img className='z-[-2] absolute inset-0 size-full object-cover object-center' src={`/Profile/Banner${randomBanner}.jpg`} alt="Banner" />
+            <div className='absolute inset-0 bg-linear-to-r/oklch from-amber-800 to-teal-400 size-full opacity-70 z-[-1] '></div>
+            <h2 className='inline-flex '>
                 <a href="" className='group flex flex-col'>
                     <div className="subjectName inline-flex group-hover:underline text-2xl leading-[2rem] truncate mb-[0.25rem]">
                         CPE-SUBJECT-1
                     </div>
                     <div className="subjectCode inline-flex group-hover:underline text-sm font-medium leading-[1.25rem] truncate">
-                        Code-001
+                        SECTION BALIW - 01
                     </div>
                 </a>
             </h2>
@@ -21,9 +23,7 @@ const ClassCard = () => {
         </div>
         
         <div className="pendingWorks p-[1rem] min-h-0 grow">
-            <div className='photo mt-[-3.25rem] float-right h-[4.5rem] w-[4.5rem] bg-amber-700 rounded-full relative'>
-
-            </div>
+            <img className='photo mt-[-3.25rem] float-right h-[4.5rem] w-[4.5rem] bg-contain rounded-full relative' src={`/Profile/Sample_Profile.png`} alt="Professor" />
         </div> 
         <div className="options flex justify-end gap-[1rem] px-[0.25rem] py-[0.5rem] border-t-[1px] border-solid border-gray-300">
             <div className='h-[40px] w-[40px] flex justify-center items-center ripple-button'>
