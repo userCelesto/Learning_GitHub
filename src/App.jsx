@@ -16,7 +16,7 @@ function App() {
           <div>
             <NavLink to={'/h'} className='flex justify-center items-center ml-[8px] hover:cursor-pointer'><img className='h-[28px]' src="/logo_square_rounded.svg" alt="logo" /><span className='ml-[0.625rem] mr-[0.125rem] text-2xl text-[#444746] font-extralight'>Classroom</span></NavLink>
           </div>
-          {['/', '/h'].includes(location.pathname.trim())? '' : <span className="ml-[0.5rem] mr-[0.125rem]"><svg focusable="false" width="18" height="18" viewBox="0 0 24 24" class=" NMm5M hhikbc"><path d="M7.59 18.59L9 20l8-8-8-8-1.41 1.41L14.17 12"></path></svg></span>}
+          {['/', '/h'].includes(location.pathname.trim())? '' : <span className="ml-[0.5rem] mr-[0.125rem]"><svg focusable="false" width="18" height="18" viewBox="0 0 24 24" className=" NMm5M hhikbc"><path d="M7.59 18.59L9 20l8-8-8-8-1.41 1.41L14.17 12"></path></svg></span>}
           <NavLink to={Location.pathname}><span className='ml-[0.5rem] mr-[0.125rem] text-[1.375rem] text-[#444746] font-extralight'>{{'/s':'Settings', '/calendar':'Calendar', '/h/archived':'Archived classes'}[Location.pathname]}</span></NavLink>
 
         </div>  
@@ -29,7 +29,7 @@ function App() {
       
       <div className="content flex bg-[#f8fafd]">
         <SideNav />
-        <div className='w-[calc(100vw-4.75rem)] rounded-ss-4xl shadow-xs mt-[1px] bg-white overflow-hidden z-[5]'>
+        <div className='w-[calc(100vw-4.75rem)] rounded-ss-4xl shadow-xs mt-[1px] bg-white overflow-hidden z-[0]'>
           <Outlet  />
         </div>
       </div>
