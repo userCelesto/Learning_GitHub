@@ -4,7 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import HomeDashboard from './Pages/HomeDashboard.jsx'
-import Settings from './components/Settings.jsx'
+import Settings from './Pages/Settings.jsx'
+import Calendar from './Pages/Calendar.jsx'
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
       {index:true, element:<HomeDashboard />},
       {path:'h', element:<  HomeDashboard />},
       {path:'h/archived', element: <div>This is a page for archived classes</div>},
-      {path:'calendar', element: <div>This is a Calendar</div>},
+      {path:'calendar', element: <Calendar />},
       {path:'s', element: <Settings />},
     ]
   }

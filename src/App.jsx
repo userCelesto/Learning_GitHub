@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import SideNav from './components/SideNav.jsx'
 import { NavLink } from 'react-router-dom'
 import { Outlet } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
-import Settings from './components/Settings.jsx'
 
 
 function App() {

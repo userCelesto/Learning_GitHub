@@ -3,45 +3,31 @@ import { Switch } from '@mui/material'
 
 const Settings = () => {
   const [isEmailOn, setisEmailOn] = useState(false)
-  const [CommentToggles, setCommentToggles] = useState({
+  const [notification_toggles, setNotification_toggles] = useState({
     comments_on_post: false,
     comments_on_mention: false,
     private_comments: false,
-  })
-  const [ClassEnrolled, setClassEnrolled] = useState({
+
     posts_and_work: false,
     returned_work_grades: false,
     invitation_to_join: false,
-    due_date: false
-  })
-  const [ClassTeaching, setClassTeaching] = useState({
+    due_date: false,
+
     late_submission: false,
     resubmission: false,
-    invitation_to_teach: false, 
+    invitation_to_teach: false,
     post_status: false
-  })
-
-  const emailNotification = (isItOn) => {
-    setisEmailOn(isItOn)
-    if(!isItOn) return
+  });
+  const handle_email_toggle = (isEmailOn) => {
+    setisEmailOn(isEmailOn)
+    console.log(isEmailOn)
   }
-  const handle_comment_toggle = (toggle) => (e) => {
-    setCommentToggles((prev) => ({
-      ...prev,
-      [toggle]: e.target.checked,
-    }))
-  }
-    const handle_class_enrolled_toggles = (toggle) => (e) => {
-    setClassEnrolled((prev) => ({
+  const handle_notification_toggles = (toggle) => (e) => {
+    setNotification_toggles((prev) => ({
       ...prev,
       [toggle]: e.target.checked
     }))
-  }
-  const handle_class_teaching_toggles = (toggle) => (e) => {
-    setClassTeaching((prev) => ({
-      ...prev,
-      [toggle]: e.target.checked
-    }))
+    console.log(`${toggle}: ${notification_toggles[toggle]}`)
   }
   return (
     <div className='flex flex-col mx-auto max-w-[808px] p-[1.5rem] '>
@@ -71,7 +57,7 @@ const Settings = () => {
                 <div className='label'>Allow email notifications</div>
                 <Switch
                   checked={isEmailOn}
-                  onChange={(e)=>{emailNotification(e.target.checked)}}
+                  onChange={(e)=>{handle_email_toggle(e.target.checked)}}
                   color='primary'
                 />
             </label>  
@@ -83,24 +69,24 @@ const Settings = () => {
             <label className='flex justify-between items-center mb-6'>
               <div className="font-semibold text-sm leading-5">Comments on your posts</div>
               <Switch
-                  checked={CommentToggles.comments_on_post}
-                  onChange={handle_comment_toggle('comments_on_post')}
+                  checked={notification_toggles.comments_on_post}
+                  onChange={handle_notification_toggles('comments_on_post')}
                   color='primary'
               />
             </label>
             <label className='flex justify-between items-center mb-6'>
               <div className="font-semibold text-sm leading-5">Comments that mention you</div>
               <Switch
-                  checked={CommentToggles.comments_on_mention}
-                  onChange={handle_comment_toggle('comments_on_mention')}
+                  checked={notification_toggles.comments_on_mention}
+                  onChange={handle_notification_toggles('comments_on_mention')}
                   color='primary'
               />
             </label>
             <label className='flex justify-between items-center mb-6'>
               <div className="font-semibold text-sm leading-5">Private comments on work</div>
               <Switch
-                  checked={CommentToggles.private_comments}
-                  onChange={handle_comment_toggle('private_comments')}
+                  checked={notification_toggles.private_comments}
+                  onChange={handle_notification_toggles('private_comments')}
                   color='primary'
               />
             </label>
@@ -110,32 +96,32 @@ const Settings = () => {
             <label className='flex justify-between items-center mb-6'>
               <div className="font-semibold text-sm leading-5">Work and other posts from teachers</div>
               <Switch
-                  checked={ClassEnrolled.posts_and_work}
-                  onChange={handle_class_enrolled_toggles('posts_and_work')}
+                  checked={notification_toggles.posts_and_work}
+                  onChange={handle_notification_toggles('posts_and_work')}
                   color='primary'
               />
             </label>
             <label className='flex justify-between items-center mb-6'>
               <div className="font-semibold text-sm leading-5">Returned work and grades from your teachers</div>
               <Switch
-                  checked={ClassEnrolled.returned_work_grades}
-                  onChange={handle_class_enrolled_toggles('returned_work_grades')}
+                  checked={notification_toggles.returned_work_grades}
+                  onChange={handle_notification_toggles('returned_work_grades')}
                   color='primary'
               />
             </label>
             <label className='flex justify-between items-center mb-6'>
               <div className="font-semibold text-sm leading-5">Invitations to join classes as a student</div>
               <Switch
-                  checked={ClassEnrolled.invitation_to_join}
-                  onChange={handle_class_enrolled_toggles('invitation_to_join')}
+                  checked={notification_toggles.invitation_to_join}
+                  onChange={handle_notification_toggles('invitation_to_join')}
                   color='primary'
               />
             </label>
             <label className='flex justify-between items-center mb-6'>
               <div className="font-semibold text-sm leading-5">Due-date reminders for your work</div>
               <Switch
-                  checked={ClassEnrolled.due_date}
-                  onChange={handle_class_enrolled_toggles('due_date')}
+                  checked={notification_toggles.due_date}
+                  onChange={handle_notification_toggles('due_date')}
                   color='primary'
               />
             </label>
@@ -145,32 +131,32 @@ const Settings = () => {
             <label className='flex justify-between items-center mb-6'>
               <div className="font-semibold text-sm leading-5">Late submissions of student work</div>
               <Switch
-                  checked={ClassTeaching.late_submission}
-                  onChange={handle_class_teaching_toggles('late_submission')}
+                  checked={notification_toggles.late_submission}
+                  onChange={handle_notification_toggles('late_submission')}
                   color='primary'
               />
             </label>
             <label className='flex justify-between items-center mb-6'>
               <div className="font-semibold text-sm leading-5">Resubmissions of student work</div>
               <Switch
-                  checked={ClassTeaching.resubmission}
-                  onChange={handle_class_teaching_toggles('resubmission')}
+                  checked={notification_toggles.resubmission}
+                  onChange={handle_notification_toggles('resubmission')}
                   color='primary'
               />
             </label>
             <label className='flex justify-between items-center mb-6'>
               <div className="font-semibold text-sm leading-5">Invitations to co-teach classes</div>
               <Switch
-                  checked={ClassTeaching.invitation_to_teach}
-                  onChange={handle_class_teaching_toggles('invitation_to_teach')}
+                  checked={notification_toggles.invitation_to_teach}
+                  onChange={handle_notification_toggles('invitation_to_teach')}
                   color='primary'
               />
             </label>
             <label className='flex justify-between items-center mb-6'>
               <div className="font-semibold text-sm leading-5">Scheduled post published or failed</div>
               <Switch
-                  checked={ClassTeaching.post_status}
-                  onChange={handle_class_teaching_toggles('post_status')}
+                  checked={notification_toggles.post_status}
+                  onChange={handle_notification_toggles('post_status')}
                   color='primary'
               />
             </label>
